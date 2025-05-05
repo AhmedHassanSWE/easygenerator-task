@@ -8,7 +8,7 @@ import { UserSignUpForm } from "@/components/auth/user-signup-form";
 export const metadata: Metadata = {
   title: "Authentication",
   description: "Authentication forms built using the components UI.",
-}
+};
 
 export default function AuthenticationPage() {
   return (
@@ -33,21 +33,11 @@ export default function AuthenticationPage() {
           </svg>
           Auth System
         </div>
-        <div className="relative z-20 mt-auto">
-          <blockquote className="space-y-2">
-            <p className="text-lg">
-              &ldquo;This authentication system provides a secure way to manage user access with industry-standard security practices.&rdquo;
-            </p>
-            <footer className="text-sm">Sofia Davis</footer>
-          </blockquote>
-        </div>
       </div>
       <div className="lg:p-8 h-full flex items-center">
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col space-y-2 text-center">
-            <h1 className="text-2xl font-semibold tracking-tight">
-              Welcome to the App
-            </h1>
+            <h1 className="text-2xl font-semibold tracking-tight">Welcome to the App</h1>
             <p className="text-sm text-muted-foreground">
               Sign in to your account or create a new one
             </p>
@@ -66,17 +56,11 @@ export default function AuthenticationPage() {
           </Tabs>
           <p className="px-8 text-center text-sm text-muted-foreground">
             By clicking continue, you agree to our{" "}
-            <Link
-              href="/terms"
-              className="underline underline-offset-4 hover:text-primary"
-            >
+            <Link href="/terms" className="underline underline-offset-4 hover:text-primary">
               Terms of Service
             </Link>{" "}
             and{" "}
-            <Link
-              href="/privacy"
-              className="underline underline-offset-4 hover:text-primary"
-            >
+            <Link href="/privacy" className="underline underline-offset-4 hover:text-primary">
               Privacy Policy
             </Link>
             .
@@ -84,5 +68,5 @@ export default function AuthenticationPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
