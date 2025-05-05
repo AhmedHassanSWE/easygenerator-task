@@ -2,19 +2,14 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy package files first for better caching
-COPY package.json package-lock.json* ./
+COPY package*.json ./
+RUN npm install
+# Add this line to install type definitions
+RUN npm install --save-dev @types/js-cookie
 
-# Install dependencies (use ci for production)
-RUN npm ci --only=production
-
-# Copy the rest of the files
 COPY . .
 
-# Build the application
 RUN npm run build
 
 EXPOSE 3000
-
-# Start the application
-CMD ["npm", "start"]
+CMD ["npx", "next", "start"]
