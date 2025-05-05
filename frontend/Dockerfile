@@ -12,7 +12,7 @@ RUN npm install next
 
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 80
 
 # (NEW) Use "next start" directly (more reliable than "npm run start")
 CMD ["npx", "next", "start"]
