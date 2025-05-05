@@ -2,7 +2,7 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 import { AuthResponse, LoginRequest, RegisterRequest } from './types'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://13.48.131.154:80/api'
 const TOKEN_KEY = 'auth_token'
 
 // Create axios instance with base URL
