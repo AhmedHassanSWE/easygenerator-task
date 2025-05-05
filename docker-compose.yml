@@ -6,8 +6,6 @@ services:
       context: ./backend
     ports:
       - "80:80"
-    env_file:
-      - ./backend/.env
     environment:
       - PORT=80
       - NODE_ENV=development
