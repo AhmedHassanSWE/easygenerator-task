@@ -4,12 +4,15 @@ WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
-# Add this line to install type definitions
-RUN npm install --save-dev @types/js-cookie
 
 COPY . .
+
+# (NEW) Ensure Next.js is installed explicitly (avoid "sh: next: not found")
+RUN npm install next
 
 RUN npm run build
 
 EXPOSE 3000
+
+# (NEW) Use "next start" directly (more reliable than "npm run start")
 CMD ["npx", "next", "start"]
