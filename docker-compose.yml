@@ -4,33 +4,21 @@ services:
   backend:
     build:
       context: ./backend
-    container_name: backend-service
     ports:
       - "3001:3001"
-    volumes:
-      - ./backend:/app
+    env_file:
+      - ./backend/.env
     environment:
-      # Server Configuration
       - PORT=3001
       - NODE_ENV=development
-
-      # Security
       - JWT_SECRET=your_jwt_secret_key_here
       - JWT_EXPIRES_IN=7d
-
-      # CORS
-      - CORS_ORIGIN=13.48.131.154:3000
-
-      # Database
-      - MONGODB_URI=mongodb+srv://ahmed7sn3amer:Ahmed%40123@easygenerator.2mnrvsg.mongodb.net/?retryWrites=true&w=majority&appName=easygenerator
+      - CORS_ORIGIN=http://13.48.131.154:3000
 
   frontend:
     build:
       context: ./frontend
-    container_name: frontend-service
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend:/app
     environment:
-      - NEXT_PUBLIC_API_URL=13.48.131.154:3001
+      - NEXT_PUBLIC_API_URL=http://13.48.131.154:3001

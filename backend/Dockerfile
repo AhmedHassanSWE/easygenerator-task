@@ -1,17 +1,21 @@
-# backend/Dockerfile
-
 FROM node:18-alpine
 
 WORKDIR /app
+
+# (NEW) Install build tools for Alpine (required for some npm packages)
+RUN apk add --no-cache python3 make g++
 
 COPY package*.json ./
 RUN npm install
 
 COPY . .
 
+# (NEW) Ensure TypeScript is installed globally (for Nest.js builds)
+RUN npm install -g typescript
+
 RUN npm run build
 
 EXPOSE 3001
 
-# Load environment variables and run the app
-CMD ["sh", "-c", "node dist/main.js"]
+# (NEW) Use "node" directly instead of "sh" for better error handling
+CMD ["node", "dist/main.js"]

@@ -1,5 +1,3 @@
-# frontend/Dockerfile
-
 FROM node:18-alpine
 
 WORKDIR /app
@@ -9,8 +7,12 @@ RUN npm install
 
 COPY . .
 
+# (NEW) Ensure Next.js is installed explicitly (avoid "sh: next: not found")
+RUN npm install next
+
 RUN npm run build
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+# (NEW) Use "next start" directly (more reliable than "npm run start")
+CMD ["npx", "next", "start"]
