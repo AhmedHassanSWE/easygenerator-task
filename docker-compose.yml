@@ -22,4 +22,4 @@ services:
     ports:
       - "443:443"
     environment:
-      - NEXT_PUBLIC_API_URL=http://13.48.131.154:3001
+      - NEXT_PUBLIC_API_URL=http://13.48.131.154:80
