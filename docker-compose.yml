@@ -13,13 +13,13 @@ services:
       - NODE_ENV=development
       - JWT_SECRET=your_jwt_secret_key_here
       - JWT_EXPIRES_IN=7d
-      - CORS_ORIGIN=http://13.48.131.154:443
+      - CORS_ORIGIN=https://easygenerator-task.vercel.app/
       - MONGODB_URI=mongodb+srv://ahmed7sn3amer:Ahmed%40123@easygenerator.2mnrvsg.mongodb.net/?retryWrites=true&w=majority&appName=easygenerator
 
   frontend:
     build:
       context: ./frontend
     ports:
-      - "443:443"
+      - "3000:3000"
     environment:
       - NEXT_PUBLIC_API_URL=http://13.48.131.154:80

@@ -12,7 +12,7 @@ RUN npm install next
 
 RUN npm run build
 
-EXPOSE 443
+EXPOSE 3000
 
 # (NEW) Use "next start" directly (more reliable than "npm run start")
-CMD ["npx", "serve@latest", "out"]
+CMD ["npx", "next", "start"]
