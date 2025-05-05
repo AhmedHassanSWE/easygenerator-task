@@ -15,7 +15,7 @@ RUN npm install -g typescript
 
 RUN npm run build
 
-EXPOSE 443
+EXPOSE 80
 
 # (NEW) Use "node" directly instead of "sh" for better error handling
 CMD ["node", "dist/main.js"]
